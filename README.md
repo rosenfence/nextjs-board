@@ -1,3 +1,3 @@
-##Board
+## Board
 
-#Board with next.js & MongoDB
+# Board with next.js & MongoDB
