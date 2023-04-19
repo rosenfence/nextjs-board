@@ -10,10 +10,11 @@ export default async function List() {
       {posts.map((post, i) => {
         return (
           <div className='list-item' key={i}>
-            <Link prefetch={false} href={`detail/${post._id}`} className='list-link'>
+            <Link prefetch={false} href={`detail/${post._id}`}>
               <h4>{post.title}</h4>
             </Link>
             <p>{post.content}</p>
+            <Link href={`/edit/${post._id}`}>✏️</Link>
           </div>
         );
       })}
