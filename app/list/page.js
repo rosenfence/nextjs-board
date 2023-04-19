@@ -5,6 +5,13 @@ import Link from 'next/link';
 export default async function List() {
   const db = (await connectDB).db('board');
   let posts = await db.collection('post').find().toArray();
+  let lists = posts.map((post) => {
+    return {
+      _id: post._id.toString(),
+      title: post.title,
+      content: post.content,
+    };
+  });
 
   return (
     <div className='list-bg'>
@@ -13,7 +20,7 @@ export default async function List() {
           📝
         </Link>
       </div>
-      <ListItem posts={posts} />
+      <ListItem posts={lists} />
     </div>
   );
 }
