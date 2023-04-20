@@ -5,7 +5,11 @@ export default async function handleDelete(req, res) {
   const db = (await connectDB).db('board');
 
   if (req.method === 'DELETE') {
-    await db.collection('post').deleteOne({ _id: new ObjectId(req.body) });
-    return;
+    try {
+      await db.collection('post').deleteOne({ _id: new ObjectId(req.body) });
+      return res.status(200);
+    } catch {
+      return res.status(500).json('500 Internal Server Error');
+    }
   }
 }

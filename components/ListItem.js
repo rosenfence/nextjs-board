@@ -16,8 +16,15 @@ export default function ListItem({ posts }) {
             <span className='list-item-right'>
               <Link href={`/edit/${post._id.toString()}`}>✏️</Link>
               <button
-                onClick={() => {
-                  fetch('/api/delete', { method: 'DELETE', body: post._id }).then(() => console.log('삭제됨'));
+                onClick={(e) => {
+                  fetch('/api/delete', { method: 'DELETE', body: post._id })
+                    .then((res) => res.json())
+                    .then(() => {
+                      e.target.parentElement.parentElement.style.opacity = 0;
+                      setTimeout(() => {
+                        e.target.parentElement.parentElement.style.display = 'none';
+                      }, 1000);
+                    });
                 }}
               >
                 🗑️
