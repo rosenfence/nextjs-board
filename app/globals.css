@@ -95,6 +95,14 @@ a {
   align-items: flex-end;
 }
 
+.list-item-right a {
+  width: 2rem;
+}
+
+.list-item-right button {
+  background: transparent;
+}
+
 .p-20 {
   padding: 20px;
 }
