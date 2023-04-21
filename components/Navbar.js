@@ -6,7 +6,6 @@ import LogoutButton from './LogoutButton';
 
 export default async function Navbar() {
   let session = await getServerSession(authOptions);
-  console.log(session);
 
   return (
     <div className='navbar'>
