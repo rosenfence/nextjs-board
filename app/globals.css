@@ -4,7 +4,7 @@
   background: #f37e21;
 
   width: 100vw;
-  height: 50px;
+  height: 60px;
 }
 
 .navbar-link {
@@ -21,7 +21,22 @@
 
 .navbar-link:hover {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.navbar button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100%;
+
+  background: transparent;
+}
+.navbar button:hover {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 body {

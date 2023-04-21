@@ -16,7 +16,13 @@ export default async function Navbar() {
       <Link prefetch={false} href='/list' className='navbar-link'>
         📃
       </Link>
-      {session === null ? <></> : <span>{session.user.name}</span>}
+      {session === null ? (
+        <></>
+      ) : (
+        <Link prefetch={false} href='/' className='navbar-link'>
+          {session.user.name}
+        </Link>
+      )}
       {session === null ? <LoginButton /> : <LogoutButton />}
     </div>
   );
