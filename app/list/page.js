@@ -10,6 +10,7 @@ export default async function List() {
       _id: post._id.toString(),
       title: post.title,
       content: post.content,
+      author: post.author,
     };
   });
 
