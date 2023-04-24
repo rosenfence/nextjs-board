@@ -23,6 +23,9 @@ export default async function Navbar() {
         </Link>
       )}
       {session === null ? <LoginButton /> : <LogoutButton />}
+      <Link prefetch={false} href='/register' className='navbar-link'>
+        회원가입
+      </Link>
     </div>
   );
 }
